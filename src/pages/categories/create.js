@@ -7,7 +7,6 @@ import { postData } from "../../utils/fetch";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setNotif } from "../../redux/notif/actions";
-import SNavbar from "../../components/Navbar";
 
 function CategoryCreate() {
   const navigate = useNavigate();
@@ -53,23 +52,20 @@ function CategoryCreate() {
   };
 
   return (
-    <>
-      <SNavbar />
-      <Container>
-        <SBreadCrumb
-          textSecound={"Categories"}
-          urlSecound={"/categories"}
-          textThird="Create"
-        />
-        {alert.status && <SAlert type={alert.type} message={alert.message} />}
-        <Form
-          form={form}
-          isLoading={isLoading}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
-      </Container>
-    </>
+    <Container>
+      <SBreadCrumb
+        textSecound={"Categories"}
+        urlSecound={"/categories"}
+        textThird="Create"
+      />
+      {alert.status && <SAlert type={alert.type} message={alert.message} />}
+      <Form
+        form={form}
+        isLoading={isLoading}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </Container>
   );
 }
 

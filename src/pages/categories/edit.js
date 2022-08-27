@@ -7,7 +7,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getData, putData } from "../../utils/fetch";
 import { useDispatch } from "react-redux";
 import { setNotif } from "../../redux/notif/actions";
-import SNavbar from "../../components/Navbar";
 
 function CategoryEdit() {
   const navigate = useNavigate();
@@ -64,24 +63,21 @@ function CategoryEdit() {
     }
   };
   return (
-    <>
-      <SNavbar />
-      <Container className="mt-3">
-        <SBreadCrumb
-          textSecound={"Categories"}
-          urlSecound={"/categories"}
-          textThird="Edit"
-        />
-        {alert.status && <SAlert type={alert.type} message={alert.message} />}
-        <Form
-          edit
-          form={form}
-          isLoading={isLoading}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
-      </Container>
-    </>
+    <Container className="mt-3">
+      <SBreadCrumb
+        textSecound={"Categories"}
+        urlSecound={"/categories"}
+        textThird="Edit"
+      />
+      {alert.status && <SAlert type={alert.type} message={alert.message} />}
+      <Form
+        edit
+        form={form}
+        isLoading={isLoading}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </Container>
   );
 }
 
