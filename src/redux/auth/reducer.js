@@ -13,7 +13,7 @@ export default function reducer(state = initialState, action) {
       };
 
     case USER_LOGOUT:
-      return { token: null, role: null, email: null };
+      return { token: null, role: null, refreshToken: null };
 
     default:
       return state;

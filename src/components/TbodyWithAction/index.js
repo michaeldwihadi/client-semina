@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import { Image, Spinner } from "react-bootstrap";
-// import moment from "moment";
+import moment from "moment";
 import { config } from "../../configs";
 
 function TbodyWithAction({
@@ -41,8 +41,7 @@ function TbodyWithAction({
                           src={`${config.api_image}/${data[key]}`}
                         />
                       ) : key === "date" ? (
-                        <p>test</p>
-                        // moment(data[key]).format("DD-MM-YYYY, h:mm:ss a")
+                        moment(data[key]).format("DD-MM-YYYY, h:mm:ss a")
                       ) : (
                         data[key]
                       )}
@@ -51,6 +50,7 @@ function TbodyWithAction({
               )}
               {!actionNotDisplay && (
                 <td>
+                  {customAction && customAction(data._id, data.statusEvent)}
                   {editUrl && (
                     <Button
                       variant="success"

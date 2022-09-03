@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 
 import Events from "../pages/events";
-import Create from "../pages/categories/create";
-import Edit from "../pages/categories/edit";
+import Create from "../pages/events/create";
+import Edit from "../pages/events/edit";
 
 export function EventsRoute() {
   return (
